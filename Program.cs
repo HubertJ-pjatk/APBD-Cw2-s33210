@@ -56,5 +56,9 @@ class Program
         {
             Console.WriteLine($"- Kto przetrzymuje: {r.RentedBy.FirstName} {r.RentedBy.LastName}, Co: {r.RentedEquipment.Name}");
         }
+		
+		Console.WriteLine("\nTestowanie blokad biznesowych");
+		Console.WriteLine("Próba wypożyczenia niedostępnego sprzętu:");
+		var failedRental = rentalService.RentEquipment(studentJan, projector, 2);
 	}
 }
